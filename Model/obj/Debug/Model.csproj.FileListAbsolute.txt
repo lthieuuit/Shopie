@@ -1,0 +1,12 @@
+C:\Users\lthie\source\repos\Shopie\Model\bin\Debug\Model.dll.config
+C:\Users\lthie\source\repos\Shopie\Model\bin\Debug\Model.dll
+C:\Users\lthie\source\repos\Shopie\Model\bin\Debug\Model.pdb
+C:\Users\lthie\source\repos\Shopie\Model\bin\Debug\EntityFramework.dll
+C:\Users\lthie\source\repos\Shopie\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lthie\source\repos\Shopie\Model\bin\Debug\EntityFramework.xml
+C:\Users\lthie\source\repos\Shopie\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lthie\source\repos\Shopie\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\lthie\source\repos\Shopie\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\lthie\source\repos\Shopie\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\lthie\source\repos\Shopie\Model\obj\Debug\Model.dll
+C:\Users\lthie\source\repos\Shopie\Model\obj\Debug\Model.pdb
