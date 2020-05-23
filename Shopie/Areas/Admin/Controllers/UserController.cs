@@ -19,13 +19,26 @@ namespace Shopie.Areas.Admin.Controllers
             var dao = new UserDao();
             var model = dao.ListAllPaging(page, pageSize);
 
-            return View(model);
+            return View();
         }
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
+
+        public ActionResult Edit(int id)
+        {
+            var user = new UserDao().ViewDetails(id);
+            return View(user);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            new UserDao().Delete(id);
+            return RedirectToAction("Index", "User");
+        }
+
         [HttpPost]
         public ActionResult Create(User user)
         {
@@ -38,15 +51,41 @@ namespace Shopie.Areas.Admin.Controllers
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
-                    return RedirectToAction("Create", "User");           
+                    return RedirectToAction("Create", "User");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm User không thành công");
+                    ModelState.AddModelError("", "Thêm User thành công");
                 }
 
             }
-            return View("Index");
+            return RedirectToAction("Create", "User");
+
+        }
+        [HttpPost]
+        public ActionResult Edit(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new UserDao();
+                if(!string.IsNullOrEmpty(user.Password))
+                {
+                    var encryptedPW = Encrypt.MD5Hash(user.Password);
+                    user.Password = encryptedPW;
+                }
+
+                var result = dao.Update(user);
+                if (result)
+                {
+                    return RedirectToAction("Create", "User");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Cập nhật thành công");
+                }
+
+            }
+            return RedirectToAction("Create", "User");
 
         }
     }
