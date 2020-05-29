@@ -36,7 +36,7 @@
                                         @Ajax.ActionLink("Xóa","Delete",new {@id = item.ID },new AjaxOptions
                                    {
                                        Confirm = "Xóa người dùng này?",
-                                       OnComplete = "$('#row_"+@item.ID+"').remove",
+                                       OnComplete = "$('#row_"+@item.ID+"').remove()",
                                        HttpMethod = "Delete"
                                    })
                                     </td>

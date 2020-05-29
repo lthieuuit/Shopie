@@ -14,22 +14,26 @@ namespace Model.Dao
         {
             db = new OnlineShopDbContext();
         }
-        public long Insert (User entity)
+        public long Insert(User entity)
         {
             db.Users.Add(entity);
             db.SaveChanges();
             return entity.ID;
         }
 
-        public bool Update(User uSer)
+        public bool Update(User entity)
         {
             try
             {
-                var user = db.Users.Find(uSer.ID);
-                user.Name = uSer.Name;
-                user.Address = uSer.Address;
-                user.Email = uSer.Email;
-                user.ModifiedBy = uSer.ModifiedBy;
+                var user = db.Users.Find(entity.ID);
+                user.Name = entity.Name;
+                if(!string.IsNullOrEmpty(entity.Password))
+                {
+                    user.Password = entity.Password;
+                }
+                user.Address = entity.Address;
+                user.Email = entity.Email;
+                user.ModifiedBy = entity.ModifiedBy;
                 user.ModifiedDate = DateTime.Now;
                 db.SaveChanges();
                 return true;
@@ -58,7 +62,7 @@ namespace Model.Dao
 
         public int Login(string userName, string passWord)
         {
-            var result = db.Users.FirstOrDefault(x => x.UserName == userName);
+            var result = db.Users.SingleOrDefault(x => x.UserName == userName);
             if (result == null)
             {
                 return 0;

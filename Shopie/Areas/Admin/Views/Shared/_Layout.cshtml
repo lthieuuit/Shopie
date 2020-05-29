@@ -40,7 +40,6 @@
                     <span>Quản lý người dùng</span>
                 </a>
             </li>
-
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -89,8 +88,8 @@
                                 </form>
                             </div>
                         </li>
-                        
-                        
+
+
                         <div class="topbar-divider d-none d-sm-block"></div>
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -115,7 +114,7 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1 class="mt-4">@RenderSection("header", required:true)</h1>
+                    <h1 class="mt-4">@RenderSection("header", required: true)</h1>
                     @RenderBody()
                 </div>
                 <!-- /.container-fluid -->
@@ -158,6 +157,7 @@
     </div>
     <!-- Bootstrap core JavaScript-->
     <script src="/Assets/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="/Assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="/Assets/admin/vendor/jquery-easing/jquery.easing.min.js"></script>

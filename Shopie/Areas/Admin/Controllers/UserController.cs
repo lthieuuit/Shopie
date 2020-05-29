@@ -19,7 +19,7 @@ namespace Shopie.Areas.Admin.Controllers
             var dao = new UserDao();
             var model = dao.ListAllPaging(page, pageSize);
 
-            return View();
+            return View(model);
         }
         [HttpGet]
         public ActionResult Create()
@@ -33,10 +33,11 @@ namespace Shopie.Areas.Admin.Controllers
             return View(user);
         }
 
+        [HttpDelete]
         public ActionResult Delete(int id)
         {
             new UserDao().Delete(id);
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -55,7 +56,7 @@ namespace Shopie.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm User thành công");
+                    ModelState.AddModelError("", "Thêm người dùng thành công");
                 }
 
             }
@@ -77,7 +78,7 @@ namespace Shopie.Areas.Admin.Controllers
                 var result = dao.Update(user);
                 if (result)
                 {
-                    return RedirectToAction("Create", "User");
+                    return RedirectToAction("Edit", "User");
                 }
                 else
                 {
@@ -85,7 +86,7 @@ namespace Shopie.Areas.Admin.Controllers
                 }
 
             }
-            return RedirectToAction("Create", "User");
+            return RedirectToAction("Edit", "User");
 
         }
     }
