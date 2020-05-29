@@ -78,7 +78,7 @@ namespace Shopie.Areas.Admin.Controllers
                 var result = dao.Update(user);
                 if (result)
                 {
-                    return RedirectToAction("Edit", "User");
+                    return RedirectToAction("Create", "User");
                 }
                 else
                 {
@@ -86,7 +86,7 @@ namespace Shopie.Areas.Admin.Controllers
                 }
 
             }
-            return RedirectToAction("Edit", "User");
+            return RedirectToAction("Create", "User");
 
         }
     }
