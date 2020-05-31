@@ -333,3 +333,8 @@ C:\Users\Admin\Documents\GitHub\Shopie\Shopie\obj\Debug\Shopie.csproj.CoreCompil
 C:\Users\Admin\Documents\GitHub\Shopie\Shopie\obj\Debug\Shopie.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\Shopie\Shopie\obj\Debug\Shopie.dll
 C:\Users\Admin\Documents\GitHub\Shopie\Shopie\obj\Debug\Shopie.pdb
+C:\Users\Admin\Documents\GitHub\Shopie\Shopie\bin\BotDetect.dll
+C:\Users\Admin\Documents\GitHub\Shopie\Shopie\bin\BotDetect.Web.Mvc.dll
+C:\Users\Admin\Documents\GitHub\Shopie\Shopie\bin\System.Data.SQLite.dll
+C:\Users\Admin\Documents\GitHub\Shopie\Shopie\bin\System.Data.SQLite.xml
+C:\Users\Admin\Documents\GitHub\Shopie\Shopie\bin\System.Data.SQLite.dll.config

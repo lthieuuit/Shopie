@@ -1,11 +1,13 @@
 ﻿@model PagedList.IPagedList<Model.EF.User>
+
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Quản lý người dùng";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-@section header{Dashboard}
+@section header{}
+
 <div class="row">
     <div class="col-lg-12">
         <div class="card shadow mb-4">
@@ -50,10 +52,9 @@
                             }
                         </tbody>
                     </table>
-                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = ViewBag.SearchString }))
                 </div>
             </div>
         </div>
-
     </div>
 </div>

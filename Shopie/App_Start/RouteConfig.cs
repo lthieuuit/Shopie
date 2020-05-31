@@ -14,10 +14,25 @@ namespace Shopie
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+              name: "Login",
+              url: "Login",
+              defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional },
+              namespaces: new[] { "Shopie.Controllers" }
+          );
+            routes.MapRoute(
+               name: "Register",
+               url: "Register",
+               defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
+               namespaces: new[] { "Shopie.Controllers" }
+           );
+
+                
+            routes.MapRoute(
+               name: "Default",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+               namespaces: new[] { "Shopie.Controllers" }
+           );
         }
     }
 }

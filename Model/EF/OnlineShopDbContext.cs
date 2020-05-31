@@ -166,5 +166,9 @@ namespace Model.EF
                 .Property(e => e.ModifiedBy)
                 .IsUnicode(false);
         }
+
+        //public System.Data.Entity.DbSet<Shopie.Models.LoginModel> LoginModels { get; set; }
+
+        //public System.Data.Entity.DbSet<Shopie.Models.RegisterModel> RegisterModels { get; set; }
     }
 }

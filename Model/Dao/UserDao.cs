@@ -45,9 +45,14 @@ namespace Model.Dao
             
         }
 
-        public IEnumerable<User> ListAllPaging(int page, int pageSize)
+        public IEnumerable<User> ListAllPaging(string searchString, int page, int pageSize)
         {
-            return db.Users.OrderByDescending(x=>x.ID).ToPagedList(page,pageSize);
+            IQueryable<User> model = db.Users;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString));
+            }
+            return model.OrderByDescending(x => x.ID).ToPagedList(page,pageSize);
         }
 
         public User GetByID(string userName)
@@ -62,7 +67,7 @@ namespace Model.Dao
 
         public int Login(string userName, string passWord)
         {
-            var result = db.Users.SingleOrDefault(x => x.UserName == userName);
+            var result = db.Users.FirstOrDefault(x => x.UserName == userName);
             if (result == null)
             {
                 return 0;
@@ -98,6 +103,15 @@ namespace Model.Dao
                 return false;
             }
         }
-    }
 
+        public bool CheckUserName(string userName)
+        {
+            return db.Users.Count(x => x.UserName == userName) > 0;
+        }
+
+        public bool CheckEmail(string email)
+        {
+            return db.Users.Count(x => x.Email == email) > 0;
+        }
+    }
 }
