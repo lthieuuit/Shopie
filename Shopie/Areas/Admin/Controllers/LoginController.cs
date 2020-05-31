@@ -31,7 +31,7 @@ namespace Shopie.Areas.Admin.Controllers
 
                     Session.Add(CommonConstants.USER_SESSION, userSession);
                     ViewBag.Greeting = user.UserName;
-                    return RedirectToAction("Create", "User");
+                    return RedirectToAction("Register");
                 }
                 else if (result == 0)
                 {
