@@ -141,6 +141,7 @@
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\Encrypt.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1752,6 +1753,60 @@
     <Content Include="Assets\admin\vendor\jquery\jquery.min.js" />
     <Content Include="Assets\admin\vendor\jquery\jquery.slim.js" />
     <Content Include="Assets\admin\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Assets\client\css\animate.min.css" />
+    <Content Include="Assets\client\css\bootstrap.css" />
+    <Content Include="Assets\client\css\flexslider.css" />
+    <Content Include="Assets\client\css\flexslider1.css" />
+    <Content Include="Assets\client\css\jquery-ui.css" />
+    <Content Include="Assets\client\css\style.css" />
+    <Content Include="Assets\client\images\1.jpg" />
+    <Content Include="Assets\client\images\b1.png" />
+    <Content Include="Assets\client\images\b2.png" />
+    <Content Include="Assets\client\images\b3.png" />
+    <Content Include="Assets\client\images\g1.jpg" />
+    <Content Include="Assets\client\images\g10.jpg" />
+    <Content Include="Assets\client\images\g11.jpg" />
+    <Content Include="Assets\client\images\g12.jpg" />
+    <Content Include="Assets\client\images\g2.jpg" />
+    <Content Include="Assets\client\images\g3.jpg" />
+    <Content Include="Assets\client\images\g4.jpg" />
+    <Content Include="Assets\client\images\g5.jpg" />
+    <Content Include="Assets\client\images\g6.jpg" />
+    <Content Include="Assets\client\images\g7.jpg" />
+    <Content Include="Assets\client\images\g8.jpg" />
+    <Content Include="Assets\client\images\g9.jpg" />
+    <Content Include="Assets\client\images\img1.jpg" />
+    <Content Include="Assets\client\images\img2.jpg" />
+    <Content Include="Assets\client\images\img3.jpg" />
+    <Content Include="Assets\client\images\into.png" />
+    <Content Include="Assets\client\images\move-up.png" />
+    <Content Include="Assets\client\images\s1.jpg" />
+    <Content Include="Assets\client\images\s2.jpg" />
+    <Content Include="Assets\client\images\s3.jpg" />
+    <Content Include="Assets\client\images\social-icons.png" />
+    <Content Include="Assets\client\images\star.png" />
+    <Content Include="Assets\client\images\star1.png" />
+    <Content Include="Assets\client\images\t1.png" />
+    <Content Include="Assets\client\images\t2.png" />
+    <Content Include="Assets\client\images\t3.png" />
+    <Content Include="Assets\client\images\t4.png" />
+    <Content Include="Assets\client\images\tick.png" />
+    <Content Include="Assets\client\js\bootstrap.js" />
+    <Content Include="Assets\client\js\easing.js" />
+    <Content Include="Assets\client\js\imagezoom.js" />
+    <Content Include="Assets\client\js\jquery-1.11.1.min.js" />
+    <Content Include="Assets\client\js\jquery-ui.js" />
+    <Content Include="Assets\client\js\jquery.countdown.min.js" />
+    <Content Include="Assets\client\js\jquery.flexslider.js" />
+    <Content Include="Assets\client\js\jquery.jscrollpane.min.js" />
+    <Content Include="Assets\client\js\jquery.mousewheel.js" />
+    <Content Include="Assets\client\js\main.js" />
+    <Content Include="Assets\client\js\modernizr.custom.js" />
+    <Content Include="Assets\client\js\move-top.js" />
+    <Content Include="Assets\client\js\simpleCart.min.js" />
+    <Content Include="Assets\client\js\uisearch.js" />
+    <Content Include="Assets\client\js\wow.min.js" />
+    <Content Include="Assets\client\w3layouts-License.txt" />
     <Content Include="Assets\Favicon\shopie.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
@@ -1940,6 +1995,8 @@
     <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <Content Include="Areas\Admin\Views\User\Create.cshtml" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Assets\client\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\client\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1962,17 +2019,13 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\MainMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Assets\client\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

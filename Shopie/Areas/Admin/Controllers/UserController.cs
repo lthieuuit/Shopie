@@ -14,7 +14,6 @@ namespace Shopie.Areas.Admin.Controllers
         // GET: Admin/User
         public ActionResult Index(int page = 1, int pageSize = 10)
         {
-            
 
             var dao = new UserDao();
             var model = dao.ListAllPaging(page, pageSize);
