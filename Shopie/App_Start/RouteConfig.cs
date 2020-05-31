@@ -15,13 +15,13 @@ namespace Shopie
 
             routes.MapRoute(
               name: "Login",
-              url: "Login",
+              url: "dang-nhap",
               defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional },
               namespaces: new[] { "Shopie.Controllers" }
           );
             routes.MapRoute(
                name: "Register",
-               url: "Register",
+               url: "dang-ky",
                defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
                namespaces: new[] { "Shopie.Controllers" }
            );

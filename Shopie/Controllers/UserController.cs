@@ -25,7 +25,7 @@ namespace Shopie.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
-                if(dao.CheckUserName(model.UserName))
+                if (dao.CheckUserName(model.UserName))
                 {
                     ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
                 }
@@ -47,7 +47,7 @@ namespace Shopie.Controllers
                     var encryptedPW = Encrypt.MD5Hash(user.Password);
                     user.Password = encryptedPW;
                     var result = dao.Insert(user);
-                    if(result>0)
+                    if (result > 0)
                     {
                         ViewBag.Success = "Đăng ký tài khoản thành công";
                         model = new RegisterModel();
@@ -80,7 +80,6 @@ namespace Shopie.Controllers
                     var userSession = new UserLogin();
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;
-
                     Session.Add(CommonConstants.USER_SESSION, userSession);
                     ViewBag.Greeting = user.UserName;
                     return View("Register");
@@ -106,6 +105,6 @@ namespace Shopie.Controllers
 
             return View(model);
         }
-       
+
     }
 }
