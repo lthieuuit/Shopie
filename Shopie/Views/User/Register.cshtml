@@ -8,6 +8,8 @@
 
 @using (Html.BeginForm("Register", "User", FormMethod.Post))
 {
+
+    @Html.AntiForgeryToken()
     <!--breadcrumbs-->
     <div class="breadcrumbs">
         <div class="container">
@@ -27,12 +29,10 @@
         <hr />
         <div class="widget-shadow">
             <div class="login-top wow fadeInUp animated" data-wow-delay=".7s">
-                <h4>Already have an account ?<a href="Login">  Sign In »</a> </h4>
+                <h4>Already have an account ?<a>@Html.ActionLink("Đăng nhập", "Login", "User")</a> </h4>
             </div>
             <div class="login-body">
                 <form class="wow fadeInUp animated" data-wow-delay=".7s">
-
-                    @Html.AntiForgeryToken()
 
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @if (ViewBag.Success != null)

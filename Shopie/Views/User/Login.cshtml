@@ -1,13 +1,14 @@
 ﻿@model Shopie.Models.LoginModel
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Đăng nhập";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 @using (Html.BeginForm("Login", "User", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <!--breadcrumbs-->
     <div class="breadcrumbs">
         <div class="container">
@@ -24,15 +25,13 @@
             <h3 class="title">SignIn<span> Form</span></h3>
             <p>Đăng nhập để có trải nghiệm tốt nhất </p>
         </div>
-        <hr /> 
+        <hr />
         <div class="widget-shadow">
             <div class="login-top wow fadeInUp animated" data-wow-delay=".7s">
-                <h4>Welcome back to Shopie ! <br> Not a Member ? <a href="Register">  Register Now »</a> </h4>
+                <h4>Welcome back to Shopie ! <br> Not a Member ? <a>@Html.ActionLink("Đăng ký", "Register", "User")</a> </h4>
             </div>
             <div class="login-body wow fadeInUp animated" data-wow-delay=".7s">
                 <form>
-                    @Html.AntiForgeryToken()
-
 
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -56,9 +55,10 @@
         </div>
         <div class="login-page-bottom">
             <h5> - OR -</h5>
-            <div class="social-btn btn-block"><a href="#"><i>Sign In with Facebook</i></a></div>
+            <a href="User/LoginFacebook" class="btn btn-facebook btn-user btn-block">
+                <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+            </a>
             <hr />
-
         </div>
     </div>
 }

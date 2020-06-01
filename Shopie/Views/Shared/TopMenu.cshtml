@@ -1,0 +1,17 @@
+﻿@model List<Model.EF.Menu>
+
+@{
+    var session = (UserLogin)Session[Shopie.Common.CommonConstants.USER_SESSION];
+}
+
+@if (session == null)
+{
+
+}
+else
+{
+    
+    <p>Xin chào  @session.UserName! | @Html.ActionLink("Đăng xuất", "Logout", "User")</p>
+
+}
+

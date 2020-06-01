@@ -13,6 +13,7 @@ namespace Shopie
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
             routes.MapRoute(
               name: "Login",
               url: "dang-nhap",
