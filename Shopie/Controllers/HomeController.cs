@@ -12,7 +12,12 @@ namespace Shopie.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            var productDao = new ProductDao();
+            ViewBag.NewProducts = productDao.ListNewProduct(4);
+            ViewBag.PopularProducts = productDao.ListPopularProduct(4);
             return View();
+            
+
         }
 
         [ChildActionOnly]
