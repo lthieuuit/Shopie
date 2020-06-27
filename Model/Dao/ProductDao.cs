@@ -39,16 +39,16 @@ namespace Model.Dao
             }
             return model.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
         }
-        public User ViewDetails(int id)
+        public Product ViewDetails(int id)
         {
-            return db.Users.Find(id);
+            return db.Products.Find(id);
         }
         public bool Delete(int id)
         {
             try
             {
-                var user = db.Users.Find(id);
-                db.Users.Remove(user);
+                var pd = db.Products.Find(id);
+                db.Products.Remove(pd);
                 db.SaveChanges();
                 return true;
             }

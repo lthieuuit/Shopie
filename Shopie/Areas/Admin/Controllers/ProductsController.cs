@@ -71,7 +71,7 @@ namespace Shopie.Areas.Admin.Controllers
                 var result = dao.Update(product);
                 if (result)
                 {
-                    return RedirectToAction("Create", "Products");
+                    return RedirectToAction("Index", "Products");
                 }
                 else
                 {
