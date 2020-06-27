@@ -1,4 +1,5 @@
 ﻿using Model.EF;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,62 @@ namespace Model.Dao
         public Product ViewDetail(long id)
         {
             return db.Products.Find(id);
+        }
+        public IEnumerable<Product> ListAllPaging(string searchString, int page, int pageSize)
+        {
+            IQueryable<Product> model = db.Products;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.Name.Contains(searchString) || x.Name.Contains(searchString));
+            }
+            return model.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
+        }
+        public User ViewDetails(int id)
+        {
+            return db.Users.Find(id);
+        }
+        public bool Delete(int id)
+        {
+            try
+            {
+                var user = db.Users.Find(id);
+                db.Users.Remove(user);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public long Insert(Product entity)
+        {
+            db.Products.Add(entity);
+            db.SaveChanges();
+            return entity.ID;
+        }
+        public bool Update(Product entity)
+        {
+            try
+            {
+                var product = db.Products.Find(entity.ID);
+
+                product.Name = entity.Name;
+                product.Code = entity.Code;
+                product.Metatitle = entity.Metatitle;
+                product.Image = entity.Image;
+                product.Price = entity.Price;
+                product.Quantity = entity.Quantity;
+                product.ModifiedBy = entity.ModifiedBy;
+                product.ModifiedDate = DateTime.Now;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
     }
 }
