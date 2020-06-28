@@ -125,7 +125,7 @@ namespace Shopie.Controllers
                 user.Email = email;
                 user.UserName = email;
                 user.Status = true;
-                user.Permission = 2;
+                user.Permission = 1;
                 user.Name = firstname + " " + middlename + " " + lastname;
                 user.CreateDate = DateTime.Now;
                 var resultInsert = new UserDao().InsertForFacebook(user);

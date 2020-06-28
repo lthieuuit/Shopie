@@ -1787,7 +1787,6 @@
     <Content Include="Assets\client\images\g11.jpg" />
     <Content Include="Assets\client\images\g12.jpg" />
     <Content Include="Assets\client\images\g2.jpg" />
-    <Content Include="Assets\client\images\g3.jpg" />
     <Content Include="Assets\client\images\g4.jpg" />
     <Content Include="Assets\client\images\g5.jpg" />
     <Content Include="Assets\client\images\g6.jpg" />
@@ -1825,6 +1824,9 @@
     <Content Include="Assets\client\js\simpleCart.min.js" />
     <Content Include="Assets\client\js\uisearch.js" />
     <Content Include="Assets\client\js\wow.min.js" />
+    <Content Include="Assets\client\ProductImages\b3.png" />
+    <Content Include="Assets\client\ProductImages\bankem1.jpg" />
+    <Content Include="Assets\client\ProductImages\g1.jpg" />
     <Content Include="Assets\Favicon\shopie.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
@@ -2018,6 +2020,7 @@
     <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2051,7 +2054,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Areas\Admin\Views\Customers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
