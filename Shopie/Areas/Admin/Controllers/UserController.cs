@@ -31,6 +31,14 @@ namespace Shopie.Areas.Admin.Controllers
             return View(user);
         }
 
+        public ActionResult Products(string searchString, int page = 1, int pageSize = 10)
+        {
+            var dao = new ProductDao();
+            var model = dao.ListAllPaging(searchString, page, pageSize);
+            ViewBag.SearchString = searchString;
+            return View(model);
+        }
+
         [HttpDelete]
         public ActionResult Delete(int id)
         {

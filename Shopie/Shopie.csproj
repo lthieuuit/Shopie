@@ -150,15 +150,20 @@
     <Compile Include="Areas\Admin\Controllers\CustomersController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\Encrypt.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1772,9 +1777,12 @@
     <Content Include="Assets\client\css\animate.min.css" />
     <Content Include="Assets\client\css\boostrap-social.css" />
     <Content Include="Assets\client\css\bootstrap.css" />
+    <Content Include="Assets\client\css\demo.css" />
     <Content Include="Assets\client\css\flexslider.css" />
     <Content Include="Assets\client\css\flexslider1.css" />
+    <Content Include="Assets\client\css\font-awesome.css" />
     <Content Include="Assets\client\css\jquery-ui.css" />
+    <Content Include="Assets\client\css\noJS.css" />
     <Content Include="Assets\client\css\style.css" />
     <Content Include="Assets\client\images\1.jpg" />
     <Content Include="Assets\client\images\b1.png" />
@@ -1818,11 +1826,13 @@
     <Content Include="Assets\client\js\jquery.jscrollpane.min.js" />
     <Content Include="Assets\client\js\jquery.mousewheel.js" />
     <Content Include="Assets\client\js\main.js" />
+    <Content Include="Assets\client\js\modernizr.custom.79639.js" />
     <Content Include="Assets\client\js\modernizr.custom.js" />
     <Content Include="Assets\client\js\move-top.js" />
     <Content Include="Assets\client\js\simpleCart.min.js" />
     <Content Include="Assets\client\js\uisearch.js" />
     <Content Include="Assets\client\js\wow.min.js" />
+    <Content Include="Assets\Favicon\avatar.png" />
     <Content Include="Assets\Favicon\shopie.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
@@ -2013,7 +2023,11 @@
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <Content Include="Assets\client\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\client\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Areas\Admin\Views\Customers\Customers.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Assets\client\css\.DS_Store" />
+    <Content Include="Assets\client\js\.DS_Store" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2027,7 +2041,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -2042,10 +2058,16 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Shared\MainMenu.cshtml" />
     <Content Include="Views\Shared\TopMenu.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Shared\ProductCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\Customers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

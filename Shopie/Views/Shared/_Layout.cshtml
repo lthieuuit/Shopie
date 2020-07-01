@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Shopie a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
-    <link rel="shortcut icon" type="image/png" href="~/Assets/Favicon/shopie.png" />
-    <!-- for-mobile-apps -->
+    <link rel="shortcut icon" type="image/png" href="~/Assets/Favicon/shopie.png" />    <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Shopie Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -18,6 +18,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="/Assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="/Assets/client/css/flexslider.css" type="text/css" media="screen" />
     <!--//Custom Theme files -->
+    <link rel="stylesheet" type="text/css" href="Assets/client/css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="Assets/client/js/modernizr.custom.79639.js"></script>
+    <noscript><link rel="stylesheet" type="text/css" href="Assets/client/css/noJS.css" /></noscript>
     <!--js-->
     <script src="/Assets/client/js/jquery-1.11.1.min.js"></script>
     <script src="/Assets/client/js/modernizr.custom.js"></script>
@@ -57,17 +61,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="top-header navbar navbar-default">
             <!--header-one-->
             <div class="container">
-                <div class="nav navbar-nav wow fadeInLeft animated" data-wow-delay=".5s">
-                        <p>
-                                Chào mừng đến với Shopie !
-                                @Html.ActionLink("Đăng ký", "Register", "User") Hoặc
-                                @Html.ActionLink("Đăng nhập", "Login", "User")                            
-                        </p>
 
-                </div>
-                <div class="nav navbar-nav navbar-right wow fadeInRight animated" data-wow-delay=".5s">
-                    <ul>@{ Html.RenderAction("TopMenu", "Home");}</ul>
-                 </div>
+                <ul>@{ Html.RenderAction("TopMenu", "Home");}</ul>
 
             </div>
         </div>
@@ -81,7 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </ul>
                 </div>
                 <div class="nav navbar-nav logo wow zoomIn animated" data-wow-delay=".7s">
-                    <h1><a href="#">SHOP<b>IE</b><span class="tag">Everything in One Click </span> </a></h1>
+                    <h1><a href="/home" ref="nofollow">SHOP<b>IE</b><span class="tag">Everything in One Click </span> </a></h1>
                 </div>
                 <div class="nav navbar-nav navbar-right header-two-right">
                     <div class="header-right my-account">
@@ -178,6 +173,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/Assets/client/js/main.js"></script>
     <!--//search jQuery-->
     <!--smooth-scrolling-of-move-up-->
+    <script>
+        $(function () {
+            $('#products').slides({
+                preload: true,
+                preloadImage: 'img/loading.gif',
+                effect: 'slide, fade',
+                crossfade: true,
+                slideSpeed: 350,
+                fadeSpeed: 500,
+                generateNextPrev: true,
+                generatePagination: false
+            });
+        });
+    </script>
+
     <script type="text/javascript">
         $(document).ready(function () {
 
@@ -196,6 +206,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--Bootstrap core JavaScript
     ================================================== -->
     <!--Placed at the end of the document so the pages load faster -->
-    <script src="/Assets/client/js/bootstrap.js"></script>  
+    <script src="/Assets/client/js/bootstrap.js"></script>
 </body>
 </html>

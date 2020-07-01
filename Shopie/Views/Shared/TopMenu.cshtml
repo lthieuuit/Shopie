@@ -1,17 +1,20 @@
 ﻿@model List<Model.EF.Menu>
-
 @{
     var session = (UserLogin)Session[Shopie.Common.CommonConstants.USER_SESSION];
 }
-
 @if (session == null)
 {
-
+    <div class="nav navbar-nav navbar-left wow fadeInLeft animated" data-wow-delay=".5s">
+        <p>
+            Chào mừng đến với Shopie !
+            @Html.ActionLink("Đăng ký", "Register", "User") Hoặc
+            @Html.ActionLink("Đăng nhập", "Login", "User")
+        </p>
+    </div>
 }
 else
 {
-    
-    <p>Xin chào  @session.UserName! | @Html.ActionLink("Đăng xuất", "Logout", "User")</p>
-
+    <div class="nav navbar-nav navbar-right wow fadeInRight animated" data-wow-delay=".5s">
+        <p>Xin chào  @session.UserName! | @Html.ActionLink("Đăng xuất", "Logout", "User")</p>
+    </div>
 }
-

@@ -345,3 +345,5 @@ C:\Users\lthie\Documents\GitHub\Shopie\Shopie\bin\System.Data.SQLite.xml
 C:\Users\lthie\Documents\GitHub\Shopie\Shopie\bin\System.Data.SQLite.dll.config
 C:\Users\Admin\Documents\GitHub\Shopie\Shopie\bin\Facebook.dll
 C:\Users\Admin\Documents\GitHub\Shopie\Shopie\bin\Facebook.xml
+C:\Users\lthie\Documents\GitHub\Shopie\Shopie\bin\Facebook.dll
+C:\Users\lthie\Documents\GitHub\Shopie\Shopie\bin\Facebook.xml

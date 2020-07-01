@@ -1,13 +1,14 @@
 ﻿@model List<Model.EF.Menu>
+@foreach (var item in Model)
+{
+    <li>
+        <a href="@item.Link" class="dropdown-toggle" data-toggle="dropdown" target="@item.Target">@item.Text<b class="caret"></b></a>
+    </li>
+   
+}
 
 
 
-        @foreach (var item in Model)
-        {
-        <li>
-            <a href="@item.Link" class="dropdown-toggle" data-toggle="dropdown" target="@item.Target">@item.Text<b class="caret"></b></a>
-        </li>
-        }
 
 
-                
+
