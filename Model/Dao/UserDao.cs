@@ -21,6 +21,16 @@ namespace Model.Dao
             return entity.ID;
         }
 
+        public List<User> ListAdmin()
+        {
+            return db.Users.Where(x => x.Permission == '1').OrderByDescending(x => x.ID).ToList();
+        }
+
+        public List<User> ListCustomer()
+        {
+            return db.Users.Where(x => x.Permission == '2').OrderByDescending(x => x.ID).ToList();
+        }
+
         public long InsertForFacebook(User entity)
         {
             var user = db.Users.FirstOrDefault(x => x.UserName == entity.UserName);

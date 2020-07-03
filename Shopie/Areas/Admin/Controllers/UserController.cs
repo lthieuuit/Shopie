@@ -58,7 +58,7 @@ namespace Shopie.Areas.Admin.Controllers
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
-                    return RedirectToAction("Create", "User");
+                    return RedirectToAction("Index", "User");
                 }
                 else
                 {
@@ -66,7 +66,7 @@ namespace Shopie.Areas.Admin.Controllers
                 }
 
             }
-            return RedirectToAction("Create", "User");
+            return RedirectToAction("Index", "User");
 
         }
         [HttpPost]
@@ -84,7 +84,7 @@ namespace Shopie.Areas.Admin.Controllers
                 var result = dao.Update(user);
                 if (result)
                 {
-                    return RedirectToAction("Create", "User");
+                    return RedirectToAction("Index", "User");
                 }
                 else
                 {
@@ -92,7 +92,7 @@ namespace Shopie.Areas.Admin.Controllers
                 }
 
             }
-            return RedirectToAction("Create", "User");
+            return RedirectToAction("Index", "User");
 
         }
     }

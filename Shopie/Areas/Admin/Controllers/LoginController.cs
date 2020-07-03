@@ -30,9 +30,10 @@ namespace Shopie.Areas.Admin.Controllers
                     userSession.UserID = user.ID;
 
                     Session.Add(CommonConstants.USER_SESSION, userSession);
-                    ViewBag.Greeting = user.UserName;
-                    return RedirectToAction("../User/Index");
+                    
+                    return RedirectToAction("../Home/Index");
                 }
+                
                 else if (result == 0)
                 {
                     ModelState.AddModelError("", "Tên tài khoản không tồn tại");

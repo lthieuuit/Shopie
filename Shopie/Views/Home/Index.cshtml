@@ -80,28 +80,22 @@
         <h3 class="title">Sản phẩm mới</h3>
     </div>
     <div class="new-info">
-        <div class="col-md-3 new-grid simpleCart_shelfItem wow flipInY animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: flipInY;">
             @foreach (var item in listnewProduct)
-            {
-                var url = "/chi-tiet/" + item.Metatitle + "-" + item.ID;
-                <div class="new-top">
-                    <a href="@url"><img src="@item.Image" class="img-responsive" alt="@item.Name" /></a>
-                    <div class="new-text">
+             {
+                        var url = "/chi-tiet/" + item.Metatitle + "-" + item.ID;
+             <div class="col-md-3 gallery-grid wow flipInY animated" data-wow-delay=".5s">
+                        <a href="@url"><img src="@item.Image" class="img-responsive" alt="@item.Name" /></a>
+                 <div class="gallery-text simpleCart_shelfItem">
+                        <h5><a class="name" href="@url">@item.Name</a></h5>
+                        <p><span class="item_price">@item.Price</span></p>
                         <ul>
-                            <li><a class="item_add" href="">Thêm vào giỏ hàng</a></li>
-                            <li><a href="@url">Show Details </a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+                            <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
                         </ul>
-                    </div>
-                </div>
-                <div class="new-bottom">
-                    <h5><a class="name" href="@url">@item.Name</a></h5>
-
-                    <div class="ofr">
-                        <p><span class="item_price">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")</span></p>
-                    </div>
-                </div>
-            }
-        </div>
+                 </div>
+             </div>
+             }
        
         <div class="clearfix"> </div>
     </div>

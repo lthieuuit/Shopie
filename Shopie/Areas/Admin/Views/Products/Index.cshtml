@@ -13,7 +13,7 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Danh sách Sản phẩm</h6>
-                <button onclick="window.location.href='../Products/Create'">Thêm sản phẩm</button>
+
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -32,29 +32,35 @@
                             @foreach (var item in Model)
                             {
 
-                                   
-                            <tr id="row_@item.ID">
-                                <td>
-                                    <a href="/Admin/Products/Edit/@item.ID">Sửa</a>
-                                    |
-                                    @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
-                                    {
-                                        Confirm = "Xóa người dùng này?",
-                                        OnComplete = "$('#row_" + @item.ID + "').remove()",
-                                        HttpMethod = "Delete"
-                                    })
-                                </td>
-                                <td>@item.ID</td>
-                                <td>@item.Name</td>
-                                <td><a target="_blank" href="..@item.Image">@item.Image</a></td>
-                                
-                                <td>@item.Price</td>
-                                <td>@item.Quantity</td>
-                            </tr>
 
-                        }
+                                <tr id="row_@item.ID">
+                                    <td>
+                                        <a href="/Admin/Products/Edit/@item.ID">Sửa</a>
+                                        |
+                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                                        {
+                                            Confirm = "Xóa người dùng này?",
+                                            OnComplete = "$('#row_" + @item.ID + "').remove()",
+                                            HttpMethod = "Delete"
+                                        })
+                                    </td>
+                                    <td>@item.ID</td>
+                                    <td>@item.Name</td>
+                                    <td><a target="_blank" href="..@item.Image">@item.Image</a></td>
+                                    <td>@item.Price</td>
+                                    <td>@item.Quantity</td>
+                                </tr>
+
+                            }
+                        <td>/</td>
+                        <td>/</td>
+                        <td>/</td>
+                        <td>/</td>
+                        <td>/</td>
+                        <td><a href="/Admin/Products/Create">Thêm sản phẩm</a></td>
+
                         </tbody>
-                        </table>
+                    </table>
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = ViewBag.SearchString }))
                 </div>
             </div>

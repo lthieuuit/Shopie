@@ -51,7 +51,7 @@ namespace Shopie.Areas.Admin.Controllers
                 long id = dao.Insert(product);
                 if (id > 0)
                 {
-                    return RedirectToAction("Create", "Products");
+                    return RedirectToAction("Index", "Products");
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace Shopie.Areas.Admin.Controllers
                 }
 
             }
-            return RedirectToAction("Create", "Products");
+            return RedirectToAction("Index", "Products");
 
         }
         [HttpPost]
@@ -71,11 +71,13 @@ namespace Shopie.Areas.Admin.Controllers
                 var result = dao.Update(product);
                 if (result)
                 {
-                    return RedirectToAction("Index", "Products");
+                    ModelState.AddModelError("", "Cập nhật thành công");
+
+                    return RedirectToAction("Index","Products");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Cập nhật thành công");
+                    ModelState.AddModelError("", "Cập nhật không thành công");
                 }
 
             }
